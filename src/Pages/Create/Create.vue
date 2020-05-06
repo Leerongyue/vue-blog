@@ -22,7 +22,6 @@
       rows=10
     >
     </el-input>
-    <p class="msg">限30个字</p>
     <p>
       是否展示到首页
       <el-switch
@@ -40,6 +39,6 @@
 
 </script>
 
-<style  src="./Create.less" lang="less">
+<style src="./Create.less" lang="less" scoped>
 
 </style>

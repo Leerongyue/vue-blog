@@ -29,7 +29,7 @@
 </script>
 
 <style scoped lang="less">
-  @import "../assets/base";
+  @import "../assets/base.less";
 
 
   header.no-login {
@@ -99,6 +99,7 @@
 
   @media (max-width: 500px) {
     header.xxx {
+
       h1 {
         font-size: 30px;
       }

@@ -22,7 +22,6 @@
       placeholder="请输入内容"
     >
     </el-input>
-    <p class="msg">限30个字</p>
     <p>是否展示到首页
       <el-switch
         v-model="value"
@@ -39,6 +38,6 @@
 
 </script>
 
-<style  src="./Edit.less" lang="less">
+<style src="./Edit.less" lang="less" scoped>
 
 </style>
