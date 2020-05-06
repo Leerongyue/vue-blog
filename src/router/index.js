@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Create from '../Pages/Create/Create.vue'
 import Detail from '../Pages/Detail/Detail.vue'
 import Edit from '../Pages/Edit/Edit.vue'
-import Home from '../Pages/Home/Home.vue'
+import Home from '../Pages/Index/Home.vue'
 import Login from '../Pages/Login/Login.vue'
 import My from '../Pages/My/My.vue'
 import Register from '../Pages/Register/Register.vue'
@@ -26,7 +26,7 @@ export default new Router({
       component: Edit
     },
     {
-      path: '/home',
+      path: '/',
       component: Home
     },
     {

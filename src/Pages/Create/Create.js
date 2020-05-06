@@ -8,7 +8,7 @@ window.auth = auth
 export default {
   data() {
     return {
-      n: 0
+      value: false
     }
   }
 }

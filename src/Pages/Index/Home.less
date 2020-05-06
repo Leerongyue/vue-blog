@@ -1,0 +1,52 @@
+@import "../../assets/base";
+
+#index {
+  .blog-posts {
+
+    .item {
+      display: grid;
+      grid: auto auto / 80px 1fr;
+      margin: 20px 0;
+
+      .avatar {
+        //span1可省略，1/2报错就用1/span1，反之亦然
+        grid-column: 1/2;
+        grid-row: 1/span2;
+        justify-self: center;
+        margin-left: 0;
+        text-align: center;
+        padding-top: 10px;
+
+
+        img {
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+        }
+
+        figcaption {
+          font-size: 12px;
+          color: @textLighterColor;
+        }
+      }
+
+      h3 {
+        //span1可省略
+        grid-column: 2/3;
+        grid-row: 1/2;
+
+        span {
+          font-size: 12px;
+          color: @textLighterColor;
+          font-weight: normal;
+        }
+      }
+
+      p {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+    }
+  }
+
+}
