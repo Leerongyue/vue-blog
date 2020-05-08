@@ -1,6 +1,7 @@
 @import "base.less";
+@import "./common";
 
-.login,.register {
+.login, .register {
   display: grid;
   justify-content: center;
   padding-top: 30px;
@@ -13,8 +14,13 @@
     margin: 5px 0;
   }
 
-  input {
-    width: 400px;
+  //input {
+  //  width: 400px;
+  //}
+  //自定义input样式
+  input.el-input__inner {
+    width: 500px;
+    border-radius: 15px;
   }
 
   .error {
@@ -39,5 +45,4 @@
     }
   }
 }
-
 

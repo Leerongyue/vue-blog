@@ -4,15 +4,30 @@
       <h1>let's share</h1>
       <p>选择大于努力，认真你就输了</p>
       <div id="buttons">
-        <el-button class="left">立即登录</el-button>
-        <el-button>注册账号</el-button>
+        <router-link to="/login">
+          <el-button class="left">立即登录</el-button>
+        </router-link>
+        <router-link to="/register">
+          <el-button>注册账号</el-button>
+        </router-link>
       </div>
     </template>
 
     <template v-else-if="isLogin">
       <h1>let's share</h1>
       <i class="edit el-icon-edit"></i>
-      <img class="avatar" src="../assets/1.png" alt="">
+      <div class="user">
+        <img class="avatar" :src="user.avatar" alt="user.username" :title="user.username">
+        <ul>
+          <li>
+            <router-link to="/my">我的</router-link>
+          </li>
+          <li>
+            <a href="#" @click="onLogout">注销</a>
+          </li>
+        </ul>
+
+      </div>
     </template>
 
   </header>
@@ -23,6 +38,7 @@
 
   window.auth = auth
   import {mapGetters, mapActions} from 'vuex'
+  import router from 'vue-router'
 
   export default {
     data() {
@@ -45,6 +61,10 @@
         'checkLogin',
         'logout'
       ]),
+      onLogout() {
+        this.logout()
+
+      }
     }
 
   }
@@ -52,7 +72,7 @@
 
 <style scoped lang="less">
   @import "../assets/base.less";
-
+  @import '../assets/common.less';
 
   header.no-login {
     /*border: 1px solid red;*/
@@ -81,6 +101,13 @@
 
       .left {
         margin-right: 30px;
+      }
+
+      button {
+        &:hover {
+          background: rgba(0, 153, 51);
+          color: white;
+        }
       }
     }
   }
@@ -116,6 +143,39 @@
       border: 1px solid #fff;
       border-radius: 50%;
       margin-left: 15px;
+    }
+
+    .user {
+      position: relative;
+
+      ul {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 90%;
+        border: 1px solid #eaeaea;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+
+        a {
+          color: #333;
+          font-size: 12px;
+          display: block;
+          padding: 5px 8px;
+
+          &:hover {
+            background: #eaeaea;
+          }
+
+        }
+
+
+      }
+
+      &:hover ul {
+        display: block;
+      }
     }
   }
 
