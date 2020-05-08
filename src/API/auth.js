@@ -14,9 +14,9 @@ export default {
     return request(URL.LOGIN, 'POST', {username, password})
   },
   logout() {
-    return request(URL.LOGIN)
+    return request(URL.LOGOUT)
   },
-  GET_INFO() {
+  getInfo() {
     return request(URL.GET_INFO)
   }
 }

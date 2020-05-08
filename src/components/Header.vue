@@ -11,20 +11,42 @@
 
     <template v-else-if="isLogin">
       <h1>let's share</h1>
-      <i title="写博客" class="edit el-icon-edit"></i>
-      <img title="个人中心" class="avatar" src="../assets/1.png" alt="">
+      <i class="edit el-icon-edit"></i>
+      <img class="avatar" src="../assets/1.png" alt="">
     </template>
 
   </header>
 </template>
 
 <script>
+  import auth from '../API/auth'
+
+  window.auth = auth
+  import {mapGetters, mapActions} from 'vuex'
+
   export default {
     data() {
-      return {
-        isLogin: true
-      }
+      return {}
+    },
+
+    computed: {
+      ...mapGetters([
+        'isLogin',
+        'user'
+      ])
+    },
+
+    created() {
+      this.checkLogin()
+    },
+
+    methods: {
+      ...mapActions([
+        'checkLogin',
+        'logout'
+      ]),
     }
+
   }
 </script>
 
