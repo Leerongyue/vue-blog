@@ -13,9 +13,14 @@
       </div>
     </template>
 
-    <template v-else-if="isLogin">
-      <h1>let's share</h1>
-      <i class="edit el-icon-edit"></i>
+    <template v-if="isLogin">
+
+      <h1>
+        <router-link to="/">let's share</router-link>
+      </h1>
+
+      <router-link to="/create"><i class="edit el-icon-plus"></i></router-link>
+
       <div class="user">
         <img class="avatar" :src="user.avatar" alt="user.username" :title="user.username">
         <ul>
@@ -124,11 +129,14 @@
       /*border: 1px solid;*/
       margin: 0;
       padding: 0;
-      color: #fff;
       font-size: 40px;
       text-transform: uppercase;
       flex: 1;
 
+      a {
+        color: #fff;
+
+      }
     }
 
 

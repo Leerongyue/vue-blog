@@ -1,14 +1,23 @@
-import request from '../../helpers/request'
-import auth from '../../API/auth'
-
-window.request = request
-window.auth = auth
-
+import blog from '../../API/blog'
 
 export default {
   data() {
     return {
-      value: false
+      title: '',
+      description: '',
+      content: '',
+      atIndex: false
     }
+  },
+  methods: {
+    onCreate() {
+      blog.createBlog({title: this.title, description: this.description, content: this.content, atIndex: this.atIndex})
+        .then(res => {
+            this.$message.success(res.msg)
+            this.$router.push({path: `/detail/${res.data.id}`})
+          }
+        )
+    }
+
   }
 }

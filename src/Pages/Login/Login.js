@@ -10,10 +10,10 @@ export default {
   },
   methods: {
     ...mapActions(['login']),
-    onLogin() {
+    onLogin: function () {
       this.login({username: this.username, password: this.password})
         .then(
-          () => {this.this.$router.push({path: '/'})},
+          () => {this.$router.push({path: this.$route.query.redirect || '/'})},
           (res) => {
             this.msg = res.msg
           }
