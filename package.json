@@ -10,8 +10,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "dayjs": "^1.8.26",
     "element-ui": "^2.13.1",
     "less-loader": "^4.1.0",
+    "marked": "^1.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.3.0"
