@@ -23,6 +23,7 @@
         layout="prev, pager, next"
         :total="total"
         @current-change="onPageChange"
+        :current-page="page"
         class="pagination"
       >
       </el-pagination>

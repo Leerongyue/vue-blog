@@ -9,16 +9,18 @@ export default {
     }
   },
   created() {
-    this.page = parseInt(this.$route.query.page || '1') || '1'
-    blog.getIndexBlogs({page: this.page}).then(res => {
-      this.blogs = res.data
-      this.total = res.total
-      this.page = res.page
-    })
+    this.page = parseInt(this.$route.query.page ||'1' ) || '1',
+      blog.getBlogs({page: this.page}).then(res => {
+        this.blogs = res.data
+        this.total = res.total
+        this.page = res.page
+      })
   },
   methods: {
+    // getBlogs()
+
     onPageChange(newPage) {
-      blog.getIndexBlogs({page: newPage}).then(res => {
+      blog.getBlogs({page: newPage}).then(res => {
         this.blogs = res.data
         this.total = res.total
         this.page = res.page
