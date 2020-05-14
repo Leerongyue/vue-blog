@@ -19,7 +19,7 @@
         <p>{{blog.description}}</p>
         <div class="action">
           <router-link :to="`/edit/${blog.id}`">编辑</router-link>
-          <a href="#" @click="onDelete(blog.id)">删除</a>
+          <a  @click="onDelete(blog.id)">删除</a>
         </div>
       </div>
     </section>

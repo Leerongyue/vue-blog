@@ -36,20 +36,21 @@ export default {
         this.total = res.total
       })
     },
-    // onDelete(id) {
-    //   this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
-    //     confirmButtonText: '确定',
-    //     cancelButtonText: '取消',
-    //     type: 'warning'
-    //   }).then(() => {
-    //     blog.deleteBlog(id).then(() => {
-    //       this.$message({
-    //         type: 'success',
-    //         message: '删除成功!'
-    //       })
-    //     })
-    //   })
-    // },
+    onDelete(blogId) {
+      this.$confirm('此操作不可恢复，确认删除?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        blog.deleteBlog({blogId}).then(() => {
+          this.$message({
+            type: 'success',
+            message: '删除成功!',
+          })
+          this.blogs = this.blogs.filter(blog => blog.id !== blogId)
+        })
+      })
+    },
   }
 
 }
