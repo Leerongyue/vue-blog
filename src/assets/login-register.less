@@ -4,7 +4,7 @@
 .login, .register {
   display: grid;
   justify-content: center;
-  padding-top: 30px;
+  //padding-top: 30px;
 
   h4 {
     margin: 10px 0 5px;
@@ -22,6 +22,7 @@
     width: 500px;
     border-radius: 15px;
   }
+
 
   .error {
     font-size: 12px;
@@ -45,4 +46,16 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .login, .register {
+    input.el-input__inner {
+      width: 300px;
+      border-radius: 15px;
+    }
+
+  }
+
+}
+
 

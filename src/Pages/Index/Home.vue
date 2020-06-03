@@ -22,6 +22,7 @@
         background
         layout="prev, pager, next"
         :total="total"
+        :pager-count="size"
         @current-change="onPageChange"
         :current-page="page"
         class="pagination"

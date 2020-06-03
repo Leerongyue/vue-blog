@@ -5,7 +5,8 @@ export default {
     return {
       blogs: [],
       page: 1,
-      total: 0
+      total: 0,
+      size:5
     }
   },
   created() {

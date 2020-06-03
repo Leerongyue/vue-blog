@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "upload": "npm run build; cd dist; git init; git add .; git commit -m \"init\"; git remote add origin git@github.com:Leerongyue/vue-blog.git; git push -u origin master;"
   },
   "dependencies": {
     "ant-design-vue": "^1.5.6",

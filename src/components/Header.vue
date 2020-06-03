@@ -2,7 +2,7 @@
   <header :class="{login:isLogin,'no-login':!isLogin}" class="xxx">
     <template v-if="!isLogin">
       <h1>let's share</h1>
-      <p>选择大于努力，认真你就输了</p>
+      <p>选择大于努力</p>
       <div id="buttons">
         <router-link to="/login">
           <el-button class="left">立即登录</el-button>
@@ -80,7 +80,6 @@
   @import '../assets/common.less';
 
   header.no-login {
-    /*border: 1px solid red;*/
     //上右下左
     padding: 0px 12% 30px 12%;
     display: grid;
@@ -119,14 +118,12 @@
 
   header.login {
 
-    /*border:1px solid;*/
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: @bgColor;
 
     h1 {
-      /*border: 1px solid;*/
       margin: 0;
       padding: 0;
       font-size: 40px;
@@ -188,7 +185,9 @@
   }
 
   @media (max-width: 500px) {
-    header.xxx {
+    header {
+      padding-left: 0;
+      padding-right: 0;
 
       h1 {
         font-size: 30px;
