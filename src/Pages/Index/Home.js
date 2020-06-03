@@ -1,12 +1,14 @@
 import blog from '../../API/blog'
 
+
 export default {
   data() {
     return {
       blogs: [],
       page: 1,
       total: 0,
-      size:5
+      size:10,
+      fuck:true
     }
   },
   created() {
@@ -21,6 +23,7 @@ export default {
     // getBlogs()
 
     onPageChange(newPage) {
+      console.log(newPage)
       blog.getBlogs({page: newPage}).then(res => {
         this.blogs = res.data
         this.total = res.total

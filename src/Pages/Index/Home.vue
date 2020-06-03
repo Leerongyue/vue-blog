@@ -18,16 +18,13 @@
       </div>
     </section>
     <section>
-      <el-pagination
-        background
-        layout="prev, pager, next"
+      <a-pagination
         :total="total"
-        :pager-count="size"
-        @current-change="onPageChange"
-        :current-page="page"
+        :pageSize="size"
+        @change="onPageChange"
         class="pagination"
-      >
-      </el-pagination>
+        :current="page"
+      />
     </section>
   </div>
 </template>

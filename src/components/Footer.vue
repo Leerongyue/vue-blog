@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>© lirongyue.com 2020 all rights reserved</p>
+    © lirongyue.com 2020 all rights reserved
   </footer>
 </template>
 
@@ -8,13 +8,14 @@
   export default {}
 </script>
 
-<style scoped>
+<style scoped lang="less">
   footer {
-    /*相当于flex的align-item：center;*/
-    align-self: flex-end;
+    align-self: center;
     background: #d7d7d7;
     color: #666;
-    padding: 10px;
+    padding: 10px 0;
     text-align: center;
+    p{
+    }
   }
 </style>

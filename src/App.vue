@@ -45,6 +45,7 @@
       grid-area: footer;
       padding-left: 12%;
       padding-right: 12%;
+
     }
   }
 

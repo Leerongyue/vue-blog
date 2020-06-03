@@ -1,5 +1,5 @@
 <template>
-  <header :class="{login:isLogin,'no-login':!isLogin}" class="xxx">
+  <header :class="{'login':isLogin,'no-login':!isLogin}" class="xxx">
     <template v-if="!isLogin">
       <h1>let's share</h1>
       <p>选择大于努力</p>
@@ -19,7 +19,9 @@
         <router-link to="/">let's share</router-link>
       </h1>
 
-      <router-link to="/create"><i class="edit el-icon-plus"></i></router-link>
+      <router-link to="/create">
+        <a-icon type="plus" class="edit"/>
+      </router-link>
 
       <div class="user">
         <img class="avatar" :src="user.avatar" alt="user.username" :title="user.username">
@@ -138,7 +140,9 @@
 
 
     .edit {
-      font-size: 40px;
+      /*width: 40px;*/
+      /*height:40px;*/
+      font-size: 30px;
       color: white;
     }
 
